@@ -2940,12 +2940,15 @@ As it is illustrated in [Distinguisher_TW80](miscellaneous/Key-Recovery-Friendly
 For distinguisher part, as it is illustrated in [Distinguisher_SKI](miscellaneous/Key-Recovery-Friendly-Distinguishers/Distinguisher_SKI.svg), 30 words should be guessed to determine the output sequence. Hence, in the offline phase the time complexity is $2^{8\times 25}\times 2^{8\times 1}\times \frac{25}{16\times 19} C_{E}\approx 2^{204.39} C_{E}$, and the memory complexity is $(2^{8} - 1)\times 8 \times 1 \times 2^{8\times 25}\approx 2^{210.99}$ bits. According to [Keyrecovery_SKI](miscellaneous/Key-Recovery-Friendly-Distinguishers/Keyrecovery_SKI.svg), 12 cells are active in the input state, so the data complexity is $2^{8\times 12} = 2^{96}$. For the online phase, as it is shown in [GuessedValue_SKI](miscellaneous/Key-Recovery-Friendly-Distinguishers/GuessedValue_SKI.svg), 45 sub-key bytes are involved in the key recovery, but as illustrated in [Keyschedule_SKI](miscellaneous/Key-Recovery-Friendly-Distinguishers/Keyschedule_SKI.svg) thanks to the key-bridging technique they can be deduced from 29 sub-key bytes. According to [Keyrecovery_SKI](miscellaneous/Key-Recovery-Friendly-Distinguishers/Keyrecovery_SKI.svg), $22 + 69 = 91$ S-boxes are involved in the outer rounds in total, so the time complexity of the online phase is $2^{29\times 8} \times 2^{8\times 1} \times \frac{22 + 69}{16\times 19} \times C_{E}\approx 2^{238.26}C_{E}$, where $C_{E}$ is the running time of 19 rounds of SKINNY-128-256.
 
 **Distinguisher_SKI**
+
 ![Distinguisher_SKI](miscellaneous/Key-Recovery-Friendly-Distinguishers/Distinguisher_SKI.svg)
 
 **Keyrecovery_SKI**
+
 ![Keyrecovery_SKI](miscellaneous/Key-Recovery-Friendly-Distinguishers/Keyrecovery_SKI.svg)
 
 **Keyschedule_SKI**
+
 ![Keyschedule_SKI](miscellaneous/Key-Recovery-Friendly-Distinguishers/Keyschedule_SKI.svg)
 
 ### DS-MITM Attack on SKINNY-64-192
@@ -2953,15 +2956,19 @@ For distinguisher part, as it is illustrated in [Distinguisher_SKI](miscellaneou
 [Distinguisher_SKI_64_192](miscellaneous/Key-Recovery-Friendly-Distinguishers/Distinguisher_SKI_64_192.svg) illustrates the distinguisher of our attack on 21 rounds of SKINNY-64-192, where $31$ nibbles should be guessed in the offline phase. Hence, the time complexity of the offline phase is $2^{4\times 31}\times 2^{4\times 2} \times \frac{31}{21\times 16} C_{E}\approx 2^{128.56} C_{E}$, and the memory complexity is $(2^{4\times 2} - 1)\times 4\times 2^{4\times 31}\approx 2^{133.99}$ bits. As it is shown in [Keyrecovery_SKI_64_192](miscellaneous/Key-Recovery-Friendly-Distinguishers/Keyrecovery_SKI_64_192.svg), 15 nibbles are active in the input state in the first round, which shows that the data complexity of our attack is $2^{4\times 15} = 2^{60}$ chosen plaintexts. [GuessedValue_SKI_64_192](miscellaneous/Key-Recovery-Friendly-Distinguishers/GuessedValue_SKI_64_192.svg) represents that 63 sub-key nibbles are involved in the key recovery attack, but as it can be seen in [Keyschedule_SKI_64_192](miscellaneous/Key-Recovery-Friendly-Distinguishers/Keyschedule_SKI_64_192.svg) they can be deduced from only 45 sub-key nibbles. As a result, the time complexity of the online phase is $2^{45\times 4}\times 2^{4\times 2} \times \frac{29 + 101}{21\times 16} C_{E}\approx 2^{186.63} C_{E}$.
 
 **Distinguisher_SKI_64_192**
+
 ![Distinguisher_SKI_64_192](miscellaneous/Key-Recovery-Friendly-Distinguishers/Distinguisher_SKI_64_192.svg)
 
 **Keyrecovery_SKI_64_192**
+
 ![Keyrecovery_SKI_64_192](miscellaneous/Key-Recovery-Friendly-Distinguishers/Keyrecovery_SKI_64_192.svg)
 
 **GuessedValue_SKI_64_192**
+
 ![GuessedValue_SKI_64_192](miscellaneous/Key-Recovery-Friendly-Distinguishers/GuessedValue_SKI_64_192.svg)
 
 **Keyschedule_SKI_64_192**
+
 ![Keyschedule_SKI_64_192](miscellaneous/Key-Recovery-Friendly-Distinguishers/Keyschedule_SKI_64_192.svg)
 
 ### DS-MITM Attack on SKINNY-64-128
@@ -2969,15 +2976,19 @@ For distinguisher part, as it is illustrated in [Distinguisher_SKI](miscellaneou
 We use a 7.5-round distinguisher as illustrated in [Distinguisher_SKI_64_128](miscellaneous/Key-Recovery-Friendly-Distinguishers/Distinguisher_SKI_64_128.svg) in our attack on 18 rounds of SKINNY-64-128. According to [Distinguisher_SKI_64_128](miscellaneous/Key-Recovery-Friendly-Distinguishers/Distinguisher_SKI_64_128.svg) , 14 nibbles should be guessed in the offline phase. Hence, the time complexity of the offline phase is $2^{4\times 14}\times 2^{4\times 1}\times \frac{14}{18\times 16} C_{E}\approx 2^{55.64} C_{E}$, and the memory complexity of this phase is $(2^{4\times 1} - 1)\times 4\times 1\times 2^{4\times 14}\approx 2^{61.91}$bits. As it can be seen in [GuessedValue_SKI_64_128](miscellaneous/Key-Recovery-Friendly-Distinguishers/GuessedValue_SKI_64_128.svg), 47 sub-key nibbles are involved in our attack. However, as it can be seen in [Keyschedule_SKI_64_128](miscellaneous/Key-Recovery-Friendly-Distinguishers/Keyschedule_SKI_64_128.svg) only 31 sub-key nibbles should be actually guessed. As a result the time complexity of the online phase is $2^{4\times 31}\times 2^{4\times 1}\times \frac{16 + 74}{18\times 16} C_{E}\approx 2^{126.32} C_{E}$. By the way, since 8 nibbles are active in the input of round 0 in [Keyrecovery_SKI](miscellaneous/Key-Recovery-Friendly-Distinguishers/Keyrecovery_SKI.svg), the data complexity is $2^{4\times 8} = 2^{32}$ chosen plaintexts.
 
 **Distinguisher_SKI_64_128**
+
 ![Distinguisher_SKI_64_128](miscellaneous/Key-Recovery-Friendly-Distinguishers/Distinguisher_SKI_64_128.svg)
 
 **GuessedValue_SKI_64_128**
+
 ![GuessedValue_SKI_64_128](miscellaneous/Key-Recovery-Friendly-Distinguishers/GuessedValue_SKI_64_128.svg)
 
 **Keyschedule_SKI_64_128**
+
 ![Keyschedule_SKI_64_128](miscellaneous/Key-Recovery-Friendly-Distinguishers/Keyschedule_SKI_64_128.svg)
 
 **Keyrecovery_SKI**
+
 ![Keyrecovery_SKI](miscellaneous/Key-Recovery-Friendly-Distinguishers/Keyrecovery_SKI.svg)
 
 ## License
